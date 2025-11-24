@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.social-media-card-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(30, 136, 229, 0.2) 100%);
+}
+
+.messaging-and-call-card-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(30, 136, 229, 0.2) 100%);
+}
+
+.family-tree-card-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(106, 90, 205, 0.2) 100%);
+}
+
+.metromonial-card-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 200, 150, 0.2) 100%);
+}
+
+.news-feed-card-bg {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 179, 0, 0.2) 100%);
+}
