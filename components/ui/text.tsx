@@ -6,6 +6,6 @@ interface CustomTextProps extends TextProps {
   className?: string;
 }
 
-export function Text({ className, style, ...props }: CustomTextProps) {
+export function Text({ className = "font-euclid", style, ...props }: CustomTextProps) {
   return <RNText {...props} style={style} className={cn(className)} />;
 }
