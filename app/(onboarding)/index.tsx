@@ -1,16 +1,34 @@
-import { OnboardingView } from "@/components";
-import { Button, Input, Text, View } from "@/components/ui";
+import { OnboardingView, OnboardingViewContent } from "@/components";
+import { Button, Input, View } from "@/components/ui";
+import { navigate } from "expo-router/build/global-state/routing";
+import { useState } from "react";
 
 export default function EnterMobileNumber() {
+    const [contactNumber, setContactNumber] = useState("");
+    const hasValidContactNumber = contactNumber.length === 10;
+
     return <OnboardingView>
         <View className="gap-4 justify-between flex-1">
-            <View className="gap-4">
-                <Text className="text-primary-foreground text-[32px]">Sign In</Text>
-                <Text className="text-primary-foreground text-[16px]">Enter mobile number to get started</Text>
-                <Input placeholder="Enter your mobile number" />
-            </View>
+            <OnboardingViewContent title="Sign In" subTitle="Enter contact number to get started">
+                <Input
+                    placeholder="Enter mobile number"
+                    keyboardType="phone-pad"
+                    maxLength={10}
 
-            <Button variant="gradient">Submit</Button>
+                    // Validation & formatting
+                    autoComplete="tel"
+                    textContentType="telephoneNumber"
+
+                    onChangeText={(text) => {
+                        // Remove non-numeric characters
+                        const cleaned = text.replace(/[^0-9]/g, '');
+                        setContactNumber(cleaned);
+                    }} />
+            </OnboardingViewContent>
+
+            <Button variant="gradient" disabled={!hasValidContactNumber} onPress={() => {
+                navigate("/(onboarding)/enter-otp")
+            }}>Submit</Button>
         </View>
     </OnboardingView>
 }

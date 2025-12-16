@@ -3,5 +3,5 @@ export * from "./external-link";
 export * from "./haptic-tab";
 export * from "./hello-wave";
 export * from "./onboarding-view";
+export * from "./otp-input";
 export * from "./parallax-scroll-view";
-

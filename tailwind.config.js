@@ -6,48 +6,56 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "hsl(var(--primary))",
-        "primary-foreground": "hsl(var(--primary-foreground))",
+        // Brand Colors
+        primary: "rgb(14, 20, 35)",                     // hsl(222 70% 6%)
+        "primary-foreground": "rgb(255, 255, 255)",     // hsl(0 0% 100%)
 
-        secondary: "hsl(var(--secondary))",
-        "secondary-foreground": "hsl(var(--secondary-foreground))",
+        secondary: "rgb(116, 66, 219)",                 // hsl(259 81% 63%)
+        "secondary-foreground": "rgba(255, 255, 255, 0.8)", // hsl(0 0% 100% / 0.8)
 
-        accent: "hsl(var(--accent))",
-        "accent-foreground": "hsl(var(--accent-foreground))",
+        accent: "rgb(0, 113, 255)",                     // hsl(212 100% 50%)
+        "accent-foreground": "rgb(255, 255, 255)",      // hsl(0 0% 100%)
 
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Backgrounds
+        background: "rgb(14, 20, 35)",                  // hsl(222 70% 6%)
+        foreground: "rgb(255, 255, 255)",               // hsl(0 0% 100%)
 
-        card: "hsl(var(--card))",
-        "card-foreground": "hsl(var(--card-foreground))",
+        card: "rgb(25, 32, 45)",                        // hsl(215 30% 11%)
+        "card-foreground": "rgb(255, 255, 255)",        // hsl(0 0% 100%)
 
-        "input-background": "hsl(var(--input-background))",
+        "input-background": "rgb(25, 32, 45)",          // hsl(215 30% 11%)
 
-        muted: "hsl(var(--muted))",
-        "muted-foreground": "hsl(var(--muted-foreground))",
+        // Muted
+        muted: "rgb(243, 246, 249)",                    // hsl(210 20% 95%)
+        "muted-foreground": "rgb(99, 115, 129)",        // hsl(215 20% 45%)
 
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        placeholder: "hsl(var(--placeholder))",
-        "disabled-button": "hsl(var(--disabled-button))",
-        seperator: "hsl(var(--seperator))",
+        // Structure
+        border: "rgba(255, 255, 255, 0.2)",             // hsl(0 0% 100% / 0.2)
+        input: "rgb(25, 32, 45)",                       // hsl(215 30% 11%)
+        "input-foreground": "rgb(255, 255, 255)",                       // hsl(215 30% 11%)
+        placeholder: "rgba(255, 255, 255, 0.5)",        // hsl(0 0% 100% / 0.5)
+        "disabled-button": "rgba(255, 255, 255, 0.1)",  // hsl(0 0% 100% / 0.1)
+        separator: "rgba(255, 255, 255, 0.1)",          // hsl(0 0% 100% / 0.1)
 
-        action: "hsl(var(--action))",
-        "action-foreground": "hsl(var(--action-foreground))",
+        // Action Button
+        action: "rgb(222, 50, 116)",                    // hsl(340 82% 52%)
+        "action-foreground": "rgb(255, 255, 255)",      // hsl(0 0% 100%)
 
+        // Misc
         "footer-foreground": "hsl(var(--footer-foreground))",
         "header-foreground": "hsl(var(--header-foreground))",
 
-        "post-icon-background": "hsl(var(--post-icon-background))",
-        "post-icon-foreground": "hsl(var(--post-icon-foreground))",
-        "post-icon-active-background": "hsl(var(--post-icon-active-background))",
-        "post-icon-active-foreground": "hsl(var(--post-icon-active-foreground))",
+        "post-icon-background": "rgba(0, 0, 0, 0.1)",   // hsl(0 0% 0% / 0.1)
+        "post-icon-foreground": "rgba(0, 0, 0, 0.5)",   // hsl(0 0% 0% / 0.5)
+        "post-icon-active-background": "rgba(0, 0, 0, 0.1)", // hsl(0 0% 0% / 0.1)
+        "post-icon-active-foreground": "rgb(0, 0, 0)",  // hsl(0 0% 0%)
 
-        success: "hsl(var(--success))",
-        warning: "hsl(var(--warning))",
-        danger: "hsl(var(--danger))",
-        blue: "hsl(var(--blue))",
-        pink: "hsl(var(--pink))",
+        // Semantic Colors
+        success: "rgb(71, 193, 109)",                   // hsl(139 58% 47%)
+        warning: "rgb(245, 158, 11)",                   // hsl(40 90% 55%)
+        danger: "rgb(235, 56, 86)",                     // hsl(350 85% 53%)
+        blue: "rgb(29, 124, 214)",                      // hsl(208 79% 51%)
+        pink: "rgb(222, 50, 116)",                      // hsl(340 82% 52%)
       },
 
       fontFamily: {
@@ -60,102 +68,5 @@ module.exports = {
     },
   },
 
-  plugins: [
-    ({ addBase }) =>
-      addBase({
-        ":root": {
-          /* Brand */
-          "--primary": "222 70% 6% / 1",
-          "--primary-foreground": "0 0% 100% / 1",
-
-          "--secondary": "259 81% 63% / 1",
-          "--secondary-foreground": "0 0% 100% / 0.8",
-
-          "--accent": "212 100% 50% / 1",
-          "--accent-foreground": "0 0% 100% / 1",
-
-          /* Backgrounds */
-          "--background": "222 70% 6% / 1",
-          "--foreground": "0 0% 100% / 1",
-
-          "--card": "215 30% 11% / 1",
-          "--card-foreground": "0 0% 100% / 1",
-
-          "--input-background": "215 30% 11% / 1",
-
-          /* Muted */
-          "--muted": "210 20% 95% / 1",
-          "--muted-foreground": "215 20% 45% / 1",
-
-          /* Structure */
-          "--border": "0 0% 100% / 0.2",
-          "--input": "215 30% 11% / 1",
-          "--placeholder": "0 0% 100% / 0.5",
-          "--disabled-button": "0 0% 100% / 0.1",
-          "--seperator": "0 0% 100% / 0.1",
-
-          /* Action Button */
-          "--action": "340 82% 52% / 1",
-          "--action-foreground": "0 0% 100% / 1",
-
-          /* Misc */
-          "--footer-background": "0 0% 0% / 0.5",
-          "--header-background": "0 0% 0% / 0.6",
-
-          "--post-icon-background": "0 0% 0% / 0.1",
-          "--post-icon-foreground": "0 0% 0% / 0.5",
-          "--post-icon-active-background": "0 0% 0% / 0.1",
-          "--post-icon-active-foreground": "0 0% 0% / 1",
-
-          /* Semantic */
-          "--pink": "340 82% 52% / 1",
-          "--success": "139 58% 47% / 1",
-          "--warning": "40 90% 55% / 1",
-          "--danger": "350 85% 53% / 1",
-          "--blue": "208 79% 51% / 1",
-        },
-
-        "@media (prefers-color-scheme: dark)": {
-          ":root": {
-            "--primary": "222 70% 6% / 1",
-            "--primary-foreground": "0 0% 100% / 1",
-
-            "--secondary": "259 81% 63% / 1",
-            "--secondary-foreground": "0 0% 100% / 0.8",
-
-            "--accent": "212 100% 50% / 1",
-            "--accent-foreground": "0 0% 100% / 1",
-
-            "--background": "222 70% 6% / 1",
-            "--foreground": "0 0% 100% / 1",
-
-            "--card": "215 30% 11% / 1",
-            "--card-foreground": "0 0% 100% / 1",
-
-            "--muted": "210 20% 95% / 1",
-            "--muted-foreground": "215 20% 45% / 1",
-
-            "--border": "0 0% 100% / 0.2",
-            "--input": "215 30% 11% / 1",
-            "--placeholder": "0 0% 100% / 0.5",
-            "--disabled-button": "0 0% 100% 0.1",
-            "--seperator": "0 0% 100% / 0.1",
-
-            "--action": "340 82% 52% / 1",
-            "--action-foreground": "0 0% 100% / 1",
-
-            "--post-icon-background": "0 0% 0% / 0.1",
-            "--post-icon-foreground": "0 0% 0% / 0.5",
-            "--post-icon-active-background": "0 0% 0% / 0.1",
-            "--post-icon-active-foreground": "0 0% 0% / 1",
-
-            "--pink": "340 82% 52% / 1",
-            "--success": "139 58% 47% / 1",
-            "--warning": "40 90% 55% / 1",
-            "--danger": "350 85% 53% / 1",
-            "--blue": "208 79% 51% / 1",
-          },
-        },
-      }),
-  ],
+  plugins: [],
 };

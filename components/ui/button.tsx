@@ -32,8 +32,21 @@ const textStyles: Record<Variant, string> = {
     outline: "text-foreground",
     ghost: "text-foreground",
     destructive: "text-white",
-    gradient: "text-white", // gradient fallback
+    gradient: "text-white",
 };
+
+// Define gradient color presets
+// const gradientPresets = {
+//     primary: ["red", "yellow"], // Blue to Purple
+//     secondary: ["hsl(142 76% 36% / 1)", "hsl(163 94% 24% / 1)"], // Green to Dark Green
+//     // Add more presets as needed
+// };
+
+// // You could also make this configurable via props
+// interface GradientButtonProps extends ButtonProps {
+//     gradientColors?: [string, string]; // Tuple of two colors
+//     gradientDirection?: { start: { x: number; y: number }; end: { x: number; y: number } };
+// }
 
 export function Button({
     className,
@@ -53,7 +66,7 @@ export function Button({
                 <ActivityIndicator color="white" />
             ) : typeof children === "string" ? (
                 <Text
-                    className={cn("text-base font-medium", textStyles[variant], textClassName)}
+                    className={cn("text-base font-medium", textStyles[variant], textClassName, disabled ? "text-disabled-button" : "")}
                 >
                     {children}
                 </Text>
@@ -72,12 +85,20 @@ export function Button({
                 activeOpacity={0.7}
                 className={cn(
                     "h-[48px] rounded-xl overflow-hidden", // required for gradient rounded corners
+                    isDisabled && "opacity-50",
                     className
                 )}
                 style={style as ViewStyle}
             >
                 <LinearGradient
-                    colors={["hsl(212 100% 50% / 1)", "hsl(259 81% 63% / 1)"]} // gradient colors
+                    colors={
+                        isDisabled
+                            ? ["rgba(255, 255, 255, 0.1)", "rgba(255, 255, 255, 0.1)"]
+                            : [
+                                "rgb(0, 119, 255)", // Your accent color
+                                "rgb(133, 84, 237)",  // Your secondary color
+                            ]
+                    }
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                     style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
