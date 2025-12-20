@@ -14,7 +14,11 @@ type IconSymbolName = keyof typeof MAPPING;
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
 const MAPPING = {
-  'arrow.left': "arrow-back"
+  'arrow.left': "arrow-back",
+  'doc.text.image': "upload-file",
+  'chevron.backward': "chevron-left",
+  'checkmark': "check",
+  'exclamationmark.circle': "error-outline"
 } as IconMapping;
 
 /**

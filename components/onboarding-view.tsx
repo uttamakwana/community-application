@@ -3,7 +3,14 @@ import { IconSymbol, SafeAreaView, Text, View } from "./ui";
 
 type TOnboardingViewProps = PropsWithChildren;
 export const OnboardingView = memo(function OnboardingView({ children }: TOnboardingViewProps) {
-    return <SafeAreaView className="flex-1 bg-primary">
+    return <SafeAreaView className="flex-1 bg-primary relative">
+        {/* <View
+            className="absolute bottom-[-150px] left-[-150px] w-[400px] h-[400px] rounded-full"
+            style={{
+                backgroundColor: "rgba(132, 83, 237, 0.6)",
+            }}
+        /> */}
+
         <View className="pt-[48px] pb-[16px] px-[16.5px] flex-1">{children}</View>
     </SafeAreaView>
 })

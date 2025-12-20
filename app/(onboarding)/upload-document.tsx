@@ -1,20 +1,19 @@
 import { OnboardingView, OnboardingViewContent } from "@/components";
-import { Button, Input, View } from "@/components/ui";
+import { Button, DocumentPicker, Select, View } from "@/components/ui";
 import { navigate } from "expo-router/build/global-state/routing";
 
-export default function PersonalInfo() {
+export default function UploadDocument() {
     return <OnboardingView>
         <View className="gap-4 justify-between flex-1">
-            <OnboardingViewContent title="Personal Info">
+            <OnboardingViewContent title="Upload Document">
                 <View className="gap-4">
-                    <Input placeholder="First Name" />
-                    <Input placeholder="Last Name" />
-                    <Input placeholder="Mobile Number" />
-                    <Input placeholder="Email" />
+                    <Select label="Select Document" />
+                    <DocumentPicker label="Upload Front Side" />
+                    <DocumentPicker label="Upload Back Side" />
                 </View>
             </OnboardingViewContent>
             <Button variant="gradient" onPress={() => {
-                navigate("/address-proof")
+                navigate("/confirmation")
             }}>Next</Button>
         </View>
     </OnboardingView>

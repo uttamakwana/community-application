@@ -9,7 +9,7 @@ export default function EnterMobileNumber() {
 
     return <OnboardingView>
         <View className="gap-4 justify-between flex-1">
-            <OnboardingViewContent title="Sign In" subTitle="Enter contact number to get started">
+            <OnboardingViewContent canBack={false} title="Sign In" subTitle="Enter contact number to get started">
                 <Input
                     placeholder="Enter mobile number"
                     keyboardType="phone-pad"
